@@ -1,6 +1,7 @@
 package hiber.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -8,6 +9,7 @@ public class User {
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column(name="user_id")
    private Long id;
 
    @Column(name = "name")
@@ -18,6 +20,9 @@ public class User {
 
    @Column(name = "email")
    private String email;
+
+   @OneToMany(mappedBy = "user")
+   private List<Car> user_cars;
 
    public User() {}
    
@@ -57,5 +62,13 @@ public class User {
 
    public void setEmail(String email) {
       this.email = email;
+   }
+
+   public List<Car> getUser_cars() {
+      return user_cars;
+   }
+
+   public void setUser_cars(List<Car> user_cars) {
+      this.user_cars = user_cars;
    }
 }
