@@ -13,4 +13,6 @@ public interface UserService {
     User addCarToUser(User user, Car car);
 
     void printUserInfo(User user);
+
+    List<User> getUserByCarModel(String model, int series);
 }
