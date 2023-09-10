@@ -7,8 +7,10 @@ import java.util.List;
 
 public interface UserService {
     void add(User user);
+
     List<User> listUsers();
 
-    User addCarToUser (User user, Car car);
+    User addCarToUser(User user, Car car);
 
+    void printUserInfo(User user);
 }
