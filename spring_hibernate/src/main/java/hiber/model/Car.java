@@ -1,7 +1,5 @@
 package hiber.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,7 +9,7 @@ public class Car {
     @Id
     @Column(name = "car_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int car_id;
+    private int carId;
 
     @Column(name = "car_model")
     private String model;
@@ -31,12 +29,12 @@ public class Car {
         this.series = series;
     }
 
-    public int getCar_id() {
-        return car_id;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setCar_id(int car_id) {
-        this.car_id = car_id;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
     public String getModel() {
@@ -66,9 +64,11 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "car_id=" + car_id +
+                "car_id=" + carId +
                 ", model='" + model + '\'' +
                 ", series=" + series +
                 '}';
     }
+
+
 }

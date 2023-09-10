@@ -2,3 +2,5 @@
 /2.2.1. spring_hibernate/
 /spring_hibernate/spring-hibernate.iml
 /spring_hibernate/target/
+/spring_hibernate/src/main/resources/createTables.sql
+/spring_hibernate/src/main/resources/createTables_2.sql
