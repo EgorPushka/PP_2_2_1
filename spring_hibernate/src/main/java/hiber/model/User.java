@@ -21,8 +21,8 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToMany(mappedBy = "user")
-   private List<Car> user_cars;
+   @OneToOne(mappedBy = "users")
+   private Car userCar;
 
    public User() {}
    
@@ -64,12 +64,12 @@ public class User {
       this.email = email;
    }
 
-   public List<Car> getUser_cars() {
-      return user_cars;
+   public Car getUserCars() {
+      return userCar;
    }
 
-   public void setUser_cars(List<Car> user_cars) {
-      this.user_cars = user_cars;
+   public void setUserCar(Car userCar) {
+      this.userCar = userCar;
    }
 
    @Override
@@ -79,7 +79,7 @@ public class User {
               ", firstName='" + firstName + '\'' +
               ", lastName='" + lastName + '\'' +
               ", email='" + email + '\'' +
-              ", user_cars=" + user_cars +
+              ", user_cars=" + userCar +
               '}';
    }
 }

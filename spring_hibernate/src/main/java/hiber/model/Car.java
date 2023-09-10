@@ -17,16 +17,17 @@ public class Car {
     @Column(name = "car_model_series")
     private int series;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "car_id")
     private User user;
 
     public Car() {
     }
 
-    public Car(String model, int series) {
+    public Car(String model, int series, User user) {
         this.model = model;
         this.series = series;
+        this.user = user;
     }
 
     public int getCar_id() {
@@ -67,7 +68,7 @@ public class Car {
                 "car_id=" + car_id +
                 ", model='" + model + '\'' +
                 ", series=" + series +
-                ", user=" + user +
+                ", owner=" + user +
                 '}';
     }
 }
